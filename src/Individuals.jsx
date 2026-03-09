@@ -19,7 +19,7 @@ export default function IndividualsPage() {
               rests at around 4 tons**. Some of the biggest contributors to your carbon footprint are:
             </p>
             <div className="image-container">
-              <img className="carbon-footprint-per-person-img" src="/images/your-footprint.png" alt="Carbon Footprint Per Person Graph" />
+              <img className="carbon-footprint-per-person-img" src="images/your-footprint.png" alt="Carbon Footprint Per Person Graph" />
             </div>
           </div>
           <div className="card">
