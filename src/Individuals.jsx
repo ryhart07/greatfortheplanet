@@ -37,8 +37,8 @@ export default function IndividualsPage() {
               Join thousands of individuals making a real difference in the fight against climate change. Every offset counts towards a healthier planet.
             </p>
             <div className="button-group">
-              <a href="/greatfortheplanet/?tab=Purchase" className="events-button">Calculate Your Offset</a>
-              <a href="/greatfortheplanet/?tab=Projects" className="projects-button">View Projects</a>
+              <a href="#/Purchase" className="events-button">Calculate Your Offset</a>
+              <a href="#/Projects" className="projects-button">View Projects</a>
             </div>
             <div className="features-showcase">
               <div className="feature-card">

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import HomePage from "./Frontpage";
@@ -7,11 +8,30 @@ import ProjectsPage from "./Projects";
 import PurchasePage from "./Purchase";
 import AboutUsPage from "./AboutUs";
 
+function getCurrentRoute() {
+  const hash = window.location.hash || "#/";
+  const route = hash.startsWith("#") ? hash.slice(1) : hash;
+  return route || "/";
+}
+
 export default function App() {
-  const tab = new URLSearchParams(window.location.search).get("tab");
-  const route = tab
-    ? `/${tab}`
-    : window.location.pathname.replace("/greatfortheplanet", "") || "/";
+  const [route, setRoute] = useState(getCurrentRoute());
+
+  useEffect(() => {
+    const onHashChange = () => {
+      setRoute(getCurrentRoute());
+    };
+
+    window.addEventListener("hashchange", onHashChange);
+
+    if (!window.location.hash) {
+      window.location.hash = "#/";
+    }
+
+    return () => {
+      window.removeEventListener("hashchange", onHashChange);
+    };
+  }, []);
 
   let CurrentPage = HomePage;
   switch (route.toLowerCase()) {
