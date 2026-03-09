@@ -3,7 +3,7 @@ export default function BusinessPage() {
     <>
       <link rel="icon" type="images/x-icon" href="images/business_center_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
       <title>Greatfortheplanet | Business</title>
-      <div className="container">
+      <main className="container">
         <section className="introduction-section">
           <div className="card">
             <div className="kicker">
@@ -72,7 +72,7 @@ export default function BusinessPage() {
             </p>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }

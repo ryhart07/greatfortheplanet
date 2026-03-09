@@ -3,7 +3,7 @@ export default function IndividualsPage() {
     <>
       <link rel="icon" type="images/x-icon" href="images/man_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
       <title>Greatfortheplanet | Individuals</title>
-      <div className="container">
+      <main className="container">
         <section className="introduction-section">
           <div className="card">
             <div className="kicker">
@@ -72,7 +72,7 @@ export default function IndividualsPage() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }

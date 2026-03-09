@@ -1,22 +1,24 @@
 export default function HomePage() {  
   return (
     <>
-    <link rel="icon" type="images/x-icon" href="images/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
-    <title>Greatfortheplanet | Home</title>
-      <div className="header-background-id">
-        <div className="text-on-image">
-          <h1 className="page-title">
-            Greatfortheplanet
-          </h1>
-          <h1 className="heading-one-inspiration-text">
-            Climate Action Starts Here
-          </h1>
-          <h2 className="heading-two-inspiration-text">
-            Let's Work Together to Reduce Global Carbon Emissions
-          </h2>
+      <header>
+        <link rel="icon" type="images/x-icon" href="images/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
+        <title>Greatfortheplanet | Home</title>
+        <div className="header-background-id">
+          <div className="text-on-image">
+            <h1 className="page-title">
+              Greatfortheplanet
+            </h1>
+            <h1 className="heading-one-inspiration-text">
+              Climate Action Starts Here
+            </h1>
+            <h2 className="heading-two-inspiration-text">
+              Let's Work Together to Reduce Global Carbon Emissions
+            </h2>
+          </div>
         </div>
-      </div>
-      <div className="container">
+      </header>
+      <main className="container">
         <section className="introduction-section">
           <div className="card">
             <div className="kicker">
@@ -122,7 +124,7 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-      </div>
+      </main>
     </>
   );
 }
