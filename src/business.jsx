@@ -46,8 +46,8 @@ export default function BusinessPage() {
               <strong>Business Solutions:</strong> From corporate sustainability goals to supply chain carbon reduction, we provide tailored solutions for businesses of all sizes.
             </p>
             <div className="button-group">
-              <a href="/Purchase" className="business-options-button">Get Started</a>
-              <a href="/AboutUs" className="individuals-options-button">Learn More</a>
+              <a href="/greatfortheplanet/purchase" className="business-options-button">Get Started</a>
+              <a href="/greatfortheplanet/aboutus" className="individuals-options-button">Learn More</a>
             </div>
           </div>
           <div className="card">
