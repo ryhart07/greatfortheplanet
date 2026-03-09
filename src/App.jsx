@@ -16,8 +16,7 @@ export default function App() {
     window.history.replaceState(null, "", redirectPath);
   }
 
-  const rawRoute = window.location.pathname.replace(basePath, "") || "/";
-  const route = rawRoute.length > 1 ? rawRoute.replace(/\/+$/, "") : rawRoute;
+  const route = window.location.pathname.replace(basePath, "") || "/";
 
   let CurrentPage = HomePage;
   switch (route.toLowerCase()) {

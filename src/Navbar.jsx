@@ -1,6 +1,5 @@
 export default function Navbar() {
-  const rawPath = (window.location.pathname.replace("/greatfortheplanet", "") || "/").toLowerCase();
-  const currentPath = rawPath.length > 1 ? rawPath.replace(/\/+$/, "") : rawPath;
+  const currentPath = (window.location.pathname.replace("/greatfortheplanet", "") || "/").toLowerCase();
   const isCurrentPage = (path) => currentPath === path.toLowerCase();
 
   return (

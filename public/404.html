@@ -9,9 +9,6 @@
         var basePath = "/greatfortheplanet";
         var fullPath = window.location.pathname + window.location.search + window.location.hash;
         var appRoute = window.location.pathname.replace(basePath, "").toLowerCase();
-        if (appRoute.length > 1) {
-          appRoute = appRoute.replace(/\/+$/, "");
-        }
         var validRoutes = ["/", "/business", "/individuals", "/projects", "/purchase", "/aboutus", "/login", "/sign-up"];
 
         if (fullPath.indexOf(basePath + "/") === 0 && validRoutes.indexOf(appRoute) !== -1) {
