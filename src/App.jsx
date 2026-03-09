@@ -8,24 +8,34 @@ import PurchasePage from "./Purchase";
 import AboutUsPage from "./AboutUs";
 
 export default function App() {
+  const basePath = "/greatfortheplanet";
+  const redirectPath = sessionStorage.getItem("redirectPath");
+
+  if (redirectPath && redirectPath.startsWith(basePath)) {
+    sessionStorage.removeItem("redirectPath");
+    window.history.replaceState(null, "", redirectPath);
+  }
+
+  const route = window.location.pathname.replace(basePath, "") || "/";
+
   let CurrentPage = HomePage;
-  switch (window.location.pathname) {
+  switch (route.toLowerCase()) {
     case "/":
       CurrentPage = HomePage;
       break;
-    case "/Business":
+    case "/business":
       CurrentPage = BusinessPage;
       break;
-    case "/Individuals":
+    case "/individuals":
       CurrentPage = IndividualsPage;
       break;
-    case "/Projects":
+    case "/projects":
       CurrentPage = ProjectsPage;
       break;
-    case "/Purchase":
+    case "/purchase":
       CurrentPage = PurchasePage;
       break;
-    case "/AboutUs":
+    case "/aboutus":
       CurrentPage = AboutUsPage;
       break;
   }
