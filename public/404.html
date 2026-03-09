@@ -10,11 +10,9 @@
       (function () {
         var path = window.location.pathname;
         var base = "/greatfortheplanet";
-
         if (path.indexOf(base) === 0) {
           sessionStorage.setItem("redirectPath", path + window.location.search + window.location.hash);
         }
-
         window.location.replace(base + "/");
       })();
     </script>

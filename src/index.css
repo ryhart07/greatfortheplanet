@@ -30,6 +30,31 @@ html {
   box-shadow: 0 0 0 6px rgba(47,191,74,0.12);
 }
 
+.link-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  background-color: rgb(150, 150, 150);
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+  text-decoration: none;
+}
+
+.link-btn:hover {
+  background-color: var(--greenDark);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.link-btn:active {
+  background-color: #0d4a26;
+}
+
 
 
 
@@ -557,32 +582,138 @@ section {
   grid-column: 1 / -1;
 }
 
-.business-options-button,
-.individuals-options-button {
-  display: inline-flex;
-  justify-content: center;
+
+
+
+
+/* About Us Section */
+
+
+
+
+
+.about-us-btn {
+  margin-top: 10px;
+}
+
+.bottom-of-card {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding-top: 24px;
+  text-align: center;
+}
+
+.links-to-pages-in-card {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  padding: 12px 20px;
-  border-radius: 999px;
-  background-color: rgb(150, 150, 150);
-  border: none;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s ease;
+  gap: 0px;
+  color: rgb(255, 255, 255);
+  font-weight: 200;
   text-decoration: none;
 }
 
-.business-options-button:hover,
-.individuals-options-button:hover {
-  background-color: var(--greenDark);
+.primary-text {
+  display: inline-flex;
+  align-items: center;
+  font-size: 19px;
+  margin-bottom: 5px;
+}
+
+.secondary-text {
+  display: inline-flex;
+  align-items: center;
+}
+
+.middle-card-content {
+  display: grid;
+}
+
+.subheading-in-card {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.how-to-help-box {
+  display: block;
+  outline: none;
+  min-height: 90px;
+  resize: vertical;
+  padding:11px 12px;
+  border-radius:12px;
+  border:1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  margin-top: 5px;
+  margin-bottom: 12px;
+  color: white;
+  transition: 0.2s;
+}
+
+.how-to-help-box::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.how-to-help-box:focus {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
-.business-options-button:active,
-.individuals-options-button:active {
-  background-color: #0d4a26;
+.feedback-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(12, 153, 47);
+  border: 3px solid rgb(27, 159, 13);
+  border-radius: 25px;
+  padding: 10px 25px;
+  margin-bottom: 3px;
+  font-size: medium;
+  text-transform: uppercase;
+  font-family: Sans-serif;
+  font-weight: bold;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.feedback-button:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.feedback-button:active {
+  background-color: rgb(14, 177, 55);
+  border: 3px solid rgb(14, 177, 55);
+}
+
+.respond-time-warning {
+  display: flex;
+  justify-content: center;
+  color: rgba(243, 244, 246, 0.58);
+  font-size: small;
+  margin-bottom: 15px;
+}
+
+.contact-details-in-card {
+  color: rgba(243, 244, 246, 0.78);
+  line-height: 21.5px;
+  font-size: small;
+}
+
+.partner-section {
+  display: grid;
+  align-items: stretch;
+  margin-top: 15px;
+}
+
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 150px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 
