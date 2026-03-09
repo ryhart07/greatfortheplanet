@@ -1,32 +1,33 @@
 export default function Navbar() {
-  const currentPath = (window.location.hash.replace("#", "") || "/").toLowerCase();
+  const currentTab = new URLSearchParams(window.location.search).get("tab");
+  const currentPath = currentTab ? `/${currentTab}`.toLowerCase() : "/";
   const isCurrentPage = (path) => currentPath === path.toLowerCase();
 
   return (
   <nav className="navigation-bar">
-    <a className="home-page" href="#/">Greatfortheplanet</a>
+    <a className="home-page" href="/greatfortheplanet/">Greatfortheplanet</a>
     <ul className="nav-centre">
       <li className="list-item-in-navigation-bar">
-        <a className={`link-nav-bar${isCurrentPage("/Individuals") ? " current-page" : ""}`} href="#/Individuals">Individuals</a>
+        <a className={`link-nav-bar${isCurrentPage("/Individuals") ? " current-page" : ""}`} href="/greatfortheplanet/?tab=Individuals">Individuals</a>
       </li>
       <li className="list-item-in-navigation-bar">
-        <a className={`link-nav-bar${isCurrentPage("/Business") ? " current-page" : ""}`} href="#/Business">Business</a>
+        <a className={`link-nav-bar${isCurrentPage("/Business") ? " current-page" : ""}`} href="/greatfortheplanet/?tab=Business">Business</a>
       </li>
       <li className="purchase-button">
-        <a className={`link-nav-bar${isCurrentPage("/Purchase") ? " current-page" : ""}`} href="#/Purchase">Purchase</a>
+        <a className={`link-nav-bar${isCurrentPage("/Purchase") ? " current-page" : ""}`} href="/greatfortheplanet/?tab=Purchase">Purchase</a>
       </li>
       <li className="list-item-in-navigation-bar">
-        <a className={`link-nav-bar${isCurrentPage("/Projects") ? " current-page" : ""}`} href="#/Projects">Projects</a>
+        <a className={`link-nav-bar${isCurrentPage("/Projects") ? " current-page" : ""}`} href="/greatfortheplanet/?tab=Projects">Projects</a>
       </li>
       <li className="list-item-in-navigation-bar">
-        <a className={`link-nav-bar${isCurrentPage("/AboutUs") ? " current-page" : ""}`} href="#/AboutUs">About Us</a>
+        <a className={`link-nav-bar${isCurrentPage("/AboutUs") ? " current-page" : ""}`} href="/greatfortheplanet/?tab=AboutUs">About Us</a>
       </li>
     </ul>
     <div className="sign-up-sign-in-wrapper">
-      <a className="log-in" id="nav-login-btn" href="#/login">
+      <a className="log-in" id="nav-login-btn" href="/greatfortheplanet/?tab=login">
         Log In
       </a>
-      <a className="sign-up" id="nav-signup-btn" href="#/sign-up">
+      <a className="sign-up" id="nav-signup-btn" href="/greatfortheplanet/?tab=sign-up">
         Sign Up
       </a>
     </div>
