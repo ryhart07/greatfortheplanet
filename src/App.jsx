@@ -8,10 +8,15 @@ import PurchasePage from "./Purchase";
 import AboutUsPage from "./AboutUs";
 
 export default function App() {
-  const tab = new URLSearchParams(window.location.search).get("tab");
-  const route = tab
-    ? `/${tab}`
-    : window.location.pathname.replace("/greatfortheplanet", "") || "/";
+  const basePath = "/greatfortheplanet";
+  const redirectPath = sessionStorage.getItem("redirectPath");
+
+  if (redirectPath && redirectPath.startsWith(basePath)) {
+    sessionStorage.removeItem("redirectPath");
+    window.history.replaceState(null, "", redirectPath);
+  }
+
+  const route = window.location.pathname.replace(basePath, "") || "/";
 
   let CurrentPage = HomePage;
   switch (route.toLowerCase()) {

@@ -51,7 +51,7 @@ export default function HomePage() {
               industries, or encourage new sustainable energy projects in an effort to balance out the damage the human race 
               is doing to the planet. 
             </p>
-            <a href="/greatfortheplanet/?tab=Purchase" className="events-button">
+            <a href="/greatfortheplanet/purchase" className="events-button">
               Tourism Events
             </a>
           </div>
@@ -74,7 +74,7 @@ export default function HomePage() {
                   into the atmosphere. Nowadays, more particles of carbon remain in the air than ever, trapping heat in 
                   our atmosphere.
                 </p>
-                <a className="projects-button" href="/greatfortheplanet/?tab=Projects">
+                <a className="projects-button" href="/greatfortheplanet/projects">
                   Explore Projects
                 </a>
               </div>
