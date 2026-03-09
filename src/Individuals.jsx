@@ -1,7 +1,7 @@
 export default function IndividualsPage() {
   return (
     <>
-      <link rel="icon" type="images/x-icon" href={`${import.meta.env.BASE_URL}images/man_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg`}></link>
+      <link rel="icon" type="images/x-icon" href="images/man_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
       <title>Greatfortheplanet | Individuals</title>
       <div className="container">
         <section className="introduction-section">
@@ -19,7 +19,7 @@ export default function IndividualsPage() {
               rests at around 4 tons**. Some of the biggest contributors to your carbon footprint are:
             </p>
             <div className="image-container">
-              <img className="carbon-footprint-per-person-img" src={`${import.meta.env.BASE_URL}images/your-footprint.png`} alt="Carbon Footprint Per Person Graph" />
+              <img className="carbon-footprint-per-person-img" src="images/your-footprint.png" alt="Carbon Footprint Per Person Graph" />
             </div>
           </div>
           <div className="card">

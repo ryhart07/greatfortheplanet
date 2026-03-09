@@ -8,10 +8,8 @@
       (function () {
         var basePath = "/greatfortheplanet";
         var fullPath = window.location.pathname + window.location.search + window.location.hash;
-        var appRoute = window.location.pathname.replace(basePath, "").toLowerCase();
-        var validRoutes = ["/", "/business", "/individuals", "/projects", "/purchase", "/aboutus", "/login", "/sign-up"];
 
-        if (fullPath.indexOf(basePath + "/") === 0 && validRoutes.indexOf(appRoute) !== -1) {
+        if (fullPath.indexOf(basePath + "/") === 0) {
           sessionStorage.setItem("redirectPath", fullPath);
         }
 
