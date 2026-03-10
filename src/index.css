@@ -720,6 +720,391 @@ section {
 
 
 
+/* Purchase Page Section */
+
+
+
+
+
+.offset-calculator {
+  margin-top: 14px;
+}
+
+.calc-mini-card {
+  outline: none;
+  min-height: 90px;
+  padding: 15px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  margin-top: 10px;
+  transition: 0.2s;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.calc-mini-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.calc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.over-people-limit {
+  position: absolute;
+  top: 67px;
+  right: 145px;
+  background: rgba(20, 192, 74, 0.15);
+  border-left: 4px solid rgba(74, 219, 21, 0.6);
+  padding: 8px 12px;
+  border-radius: 10px;
+  z-index: 2;
+  max-width: calc(100% - 32px);
+  pointer-events: none;
+}
+
+.over-limit-text {
+  color: rgba(74, 219, 21, 0.9);
+  font-size: 14px;
+}
+
+.calc-label {
+  color: rgba(243, 244, 246, 0.78);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.calc-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 18px;
+  background: rgba(20, 25, 35, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  transition: 0.3s;
+}
+
+.calc-input::-webkit-outer-spin-button,
+.calc-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.calc-input:focus {
+  outline: none;
+  border-color: rgba(47, 191, 74, 0.6);
+  box-shadow: 0 0 0 3px rgba(47, 191, 74, 0.1);
+}
+
+.calc-toggle {
+  display: flex;
+  gap: 12px;
+}
+
+.calc-btn {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: 0.2s;
+  cursor: pointer;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  background: rgba(35, 45, 55, 0.4);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.calc-btn:hover {
+  transform: translateY(-2px);
+}
+
+.calc-btn.is-active {
+  background: rgba(47, 191, 74, 0.25);
+  border-color: rgba(47, 191, 74, 0.5);
+  color: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 4px 12px rgba(47, 191, 74, 0.2);
+  transform: translateY(-2px);
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  gap: 16px;
+}
+
+.calc-muted {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 15px;
+}
+
+.calc-strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.calc-warning {
+  display: none;
+  margin-top: 8px;
+  background: rgba(245, 158, 11, 0.15);
+  border-left: 4px solid rgba(245, 158, 11, 0.6);
+  padding: 12px 14px;
+  border-radius: 10px;
+  color: rgba(253, 224, 71, 0.9);
+  font-size: 14px;
+}
+
+.calc-mini-divider {
+  height: 1px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.14);
+  margin: 14px 0 10px 0;
+}
+
+.calc-row-big {
+  padding-top: 14px;
+  padding-bottom: 6px;
+}
+
+.calc-muted-big {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.calc-highlight {
+  color: var(--green);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.3px;
+}
+
+.calc-subtitle {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.examples-list {
+  margin-top: 6px;
+}
+
+.calc-example-item {
+  color: rgba(243, 244, 246, 0.7);
+  font-size: 14px;
+  line-height: 24px;
+  padding: 6px 0;
+}
+
+.calc-small {
+  margin-top: 14px;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.calc-two-mini-cards{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.calc-mini-card--tall{
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.calc-mini-head{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.calc-icon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.calc-mini-header{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.calc-mini-icon{
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.06);
+  color: var(--green);
+  border: 1px solid rgba(47,191,74,0.28);
+}
+
+.calc-mini-card-title{
+  color: rgba(255,255,255,0.95);
+  font-size: 22px;
+  font-weight: 750;
+  letter-spacing: -0.4px;
+  margin: 0;
+  line-height: 26px;
+}
+
+.calc-icon--green{
+  color: rgba(47,191,74,0.95);
+}
+
+.calc-icon--blue{
+  color: rgba(59,130,246,0.95);
+}
+
+.calc-mini-title{
+  color: rgba(255,255,255,0.95);
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calc-input--card{
+  height: 44px;
+  font-size: 17px;
+  border-radius: 10px;
+  padding: 8px 14px;
+  background: rgba(20, 25, 35, 0.55);
+  border: 1.5px solid rgba(255,255,255,0.14);
+  color: rgba(255,255,255,0.92);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.calc-toggle--grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.calc-purchase-div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.calc-purchase-btn {
+  transition: 0.2s;
+  cursor: pointer;
+  background: var(--greenDark);
+  width: 100%;
+}
+
+.calculator-footer {
+  margin-top: 15px;
+  color: rgb(70, 70, 70);
+  font-size: 12px;
+}
+
+.calc-link {
+  color: rgb(132, 170, 228);
+}
+
+.mini-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mini-card {
+  outline: none;
+  min-height: 90px;
+  resize: vertical;
+  padding: 15px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+.mini-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.mini-card-title {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.mini-card-paragraph {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.mini-card-information {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.mini-card-price {
+  color: rgb(224, 217, 217);
+  font-weight: 700;
+  font-size: 20px;
+  margin-top: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 128, 0, 0.67);
+  border-radius: 50px;
+  background-color: var(--green);
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  padding: 10px 40px;
+  transition: 0.15s;
+}
+
+.mini-card-price:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.mini-card-price:active {
+  background-color: var(--greenDark);
+}
+
+
+
+
+
 /* Footer Section */
 
 
