@@ -75,6 +75,10 @@ export default function PurchasePage() {
     }
   }
 
+  function handlePeopleFocus(event) {
+    event.target.select();
+  }
+
   return (
     <>
       <link rel="icon" type="images/x-icon" href="images/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
@@ -126,6 +130,7 @@ export default function PurchasePage() {
                     max={MAX_PEOPLE}
                     value={peopleInput}
                     onChange={handlePeopleChange}
+                    onFocus={handlePeopleFocus}
                     onBlur={() => commitPeopleValue(peopleInput)}
                     onKeyDown={handlePeopleKeyDown}
                     onPaste={handlePeoplePaste}
@@ -261,6 +266,8 @@ export default function PurchasePage() {
                 </p>
               </div>
             </div>
+            {/* ADD PURCHASE CALCULATOR, SEE JOHNS EMAIL FOR DETAILS */}
+            
           </div>
 
           <div className="card">

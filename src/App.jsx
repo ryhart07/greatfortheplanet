@@ -1,11 +1,11 @@
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import HomePage from "./Frontpage";
-import BusinessPage from "./business";
-import IndividualsPage from "./Individuals";
-import ProjectsPage from "./Projects";
-import PurchasePage from "./Purchase";
-import AboutUsPage from "./AboutUs";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import HomePage from "./pages/Frontpage";
+import BusinessPage from "./pages/business";
+import IndividualsPage from "./pages/Individuals";
+import ProjectsPage from "./pages/Projects";
+import PurchasePage from "./pages/Purchase";
+import AboutUsPage from "./pages/AboutUs";
 
 export default function App() {
   const basePath = "/greatfortheplanet";
