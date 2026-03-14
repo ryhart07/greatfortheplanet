@@ -1,3 +1,4 @@
+import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 export default function NavBar() {
@@ -13,7 +14,8 @@ export default function NavBar() {
     { path: "/login", label: "Log In", className: "log-in", id: "nav-login-btn" },
     { path: "/sign-up", label: "Sign Up", className: "sign-up", id: "nav-signup-btn" },
   ];
-  const currentPath = (window.location.pathname.replace("/greatfortheplanet", "") || "/").toLowerCase();
+  const { pathname } = useLocation();
+  const currentPath = (pathname || "/").toLowerCase();
   const isCurrentPage = (path) => currentPath === path.toLowerCase();
 
   useEffect(() => {
@@ -52,23 +54,21 @@ export default function NavBar() {
     };
   }, [isMobileMenuOpen]);
 
-  const goTo = (event, path) => {
-    event.preventDefault();
+  const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
-    window.location.assign(path);
   };
 
   const renderNavLinks = () => (
     <ul className="nav-centre">
       {navItems.map(({ path, label, itemClassName }) => (
         <li key={path} className={itemClassName}>
-          <a
+          <Link
             className={`link-nav-bar${isCurrentPage(path) ? " current-page" : ""}`}
-            href={`/greatfortheplanet/${path}`}
-            onClick={(event) => goTo(event, `/greatfortheplanet${path}`)}
+            to={path}
+            onClick={closeMobileMenu}
           >
             {label}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
@@ -77,15 +77,15 @@ export default function NavBar() {
   const renderAccountLinks = (idPrefix) => (
     <div className="sign-up-sign-in-wrapper">
       {accountItems.map(({ path, label, className, id }) => (
-        <a
+        <Link
           key={path}
           className={className}
           id={`${idPrefix}-${id}`}
-          href={`/greatfortheplanet${path}`}
-          onClick={(event) => goTo(event, `/greatfortheplanet${path}`)}
+          to={path}
+          onClick={closeMobileMenu}
         >
           {label}
-        </a>
+        </Link>
       ))}
     </div>
   );
@@ -110,9 +110,9 @@ export default function NavBar() {
       />
 
       <nav className="navigation-bar desktop-navigation-bar">
-        <a className="home-page" href="/greatfortheplanet/" onClick={(event) => goTo(event, "/greatfortheplanet/")}>
+        <Link className="home-page" to="/" onClick={closeMobileMenu}>
           Greatfortheplanet
-        </a>
+        </Link>
         {renderNavLinks()}
         {renderAccountLinks("desktop")}
       </nav>
@@ -122,11 +122,15 @@ export default function NavBar() {
         className={`navigation-bar mobile-navigation-bar${isMobileMenuOpen ? " is-open" : ""}`}
         aria-hidden={!isMobileMenuOpen}
       >
-        <a className="home-page" href="/greatfortheplanet/" onClick={(event) => goTo(event, "/greatfortheplanet/")}>
-          Greatfortheplanet
-        </a>
-        {renderNavLinks()}
-        {renderAccountLinks("mobile")}
+        <div className="mobile-nav-header">
+          <Link className="home-page" to="/" onClick={closeMobileMenu}>
+            Greatfortheplanet
+          </Link>
+          {renderNavLinks()}
+        </div>
+        <div className="mobile-nav-footer">
+          {renderAccountLinks("mobile")}
+        </div>
       </nav>
     </>
   );

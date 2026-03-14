@@ -66,24 +66,35 @@
 	}
 
 	.mobile-navigation-bar {
-		position: fixed;
-		top: 0;
-		left: 0;
-		height: 100dvh;
-		width: min(320px, 86vw);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: min(320px, 86vw);
+    display: flex;
+    flex-direction: column;
+		align-items: stretch;
+    padding: 62px 12px 14px;
+    border: 0;
+    background-image: linear-gradient(to bottom, #a8a8a8, #d2d2d2);
+    z-index: 10060;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease;
+	}
+
+	.mobile-nav-header {
 		display: flex;
 		flex-direction: column;
-		align-items: stretch;
-		justify-content: flex-start;
 		gap: 10px;
-		padding: 62px 12px 14px;
-		border: 0;
-		border-right: 1px solid rgba(0, 0, 0, 0.25);
-		background-image: linear-gradient(to bottom, #a8a8a8, #d2d2d2);
+		min-height: 0;
 		overflow-y: auto;
-		z-index: 10060;
-		transform: translateX(-100%);
-		transition: transform 0.25s ease;
+	}
+
+	.mobile-nav-footer {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding-top: 8px;
 	}
 
 	.mobile-navigation-bar.is-open {
@@ -95,6 +106,7 @@
 		width: 100%;
 		text-align: center;
 		box-sizing: border-box;
+		font-family: "Poppins", sans-serif;
 	}
 
 	.mobile-navigation-bar .nav-centre,
@@ -129,12 +141,11 @@
 
 	.mobile-navigation-bar .purchase-button .link-nav-bar {
 		border-width: 2px;
-		border-radius: 12px;
+		border-radius: 25px;
 	}
 
 	.mobile-navigation-bar .sign-up-sign-in-wrapper {
 		width: 100%;
-		margin: 2px 0 0;
 		display: flex;
 		flex-direction: column;
 		gap: 8px;

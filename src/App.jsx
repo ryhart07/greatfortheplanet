@@ -1,3 +1,4 @@
+import { Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/Frontpage";
@@ -8,42 +9,18 @@ import PurchasePage from "./pages/Purchase";
 import AboutUsPage from "./pages/AboutUs";
 
 export default function App() {
-  const basePath = "/greatfortheplanet";
-  const redirectPath = sessionStorage.getItem("redirectPath");
-
-  if (redirectPath && redirectPath.startsWith(basePath)) {
-    sessionStorage.removeItem("redirectPath");
-    window.history.replaceState(null, "", redirectPath);
-  }
-
-  const route = window.location.pathname.replace(basePath, "") || "/";
-
-  let CurrentPage = HomePage;
-  switch (route.toLowerCase()) {
-    case "/":
-      CurrentPage = HomePage;
-      break;
-    case "/business":
-      CurrentPage = BusinessPage;
-      break;
-    case "/individuals":
-      CurrentPage = IndividualsPage;
-      break;
-    case "/projects":
-      CurrentPage = ProjectsPage;
-      break;
-    case "/purchase":
-      CurrentPage = PurchasePage;
-      break;
-    case "/aboutus":
-      CurrentPage = AboutUsPage;
-      break;
-  }
-
   return (
     <>
       <Navbar />
-      <CurrentPage />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/business" element={<BusinessPage />} />
+        <Route path="/individuals" element={<IndividualsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/purchase" element={<PurchasePage />} />
+        <Route path="/aboutus" element={<AboutUsPage />} />
+        <Route path="*" element={<Navigate replace to="/" />} />
+      </Routes>
       <Footer />
     </>
   );

@@ -311,6 +311,8 @@ section {
   border-radius: 18px;
   padding: 22px;
   transition: 0.3s;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
 .card:hover {
