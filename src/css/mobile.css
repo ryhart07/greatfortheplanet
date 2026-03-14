@@ -111,6 +111,12 @@
 		width: 100%;
 	}
 
+	.mobile-navigation-bar li:nth-child(1) { order: 1; } /* Individuals */
+	.mobile-navigation-bar li:nth-child(2) { order: 2; } /* Business */
+	.mobile-navigation-bar li:nth-child(3) { order: 5; } /* Purchase */
+	.mobile-navigation-bar li:nth-child(4) { order: 3; } /* Projects */
+	.mobile-navigation-bar li:nth-child(5) { order: 4; } /* About Us */
+
 	.mobile-navigation-bar .link-nav-bar,
 	.mobile-navigation-bar .purchase-button .link-nav-bar,
 	.mobile-navigation-bar .sign-up,

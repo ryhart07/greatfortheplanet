@@ -39,11 +39,15 @@ export default function NavBar() {
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth <= 1024) {
-      document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    if (window.innerWidth > 1024) {
+      return undefined;
     }
 
+    document.documentElement.style.overflow = isMobileMenuOpen ? "hidden" : "";
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
+
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
