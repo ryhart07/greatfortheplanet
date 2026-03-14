@@ -12,7 +12,7 @@ export default function NavBar() {
   ];
   const accountItems = [
     { path: "/login", label: "Log In", className: "log-in", id: "nav-login-btn" },
-    { path: "/sign-up", label: "Sign Up", className: "sign-up", id: "nav-signup-btn" },
+    { path: "/signup", label: "Sign Up", className: "sign-up", id: "nav-signup-btn" },
   ];
   const { pathname } = useLocation();
   const currentPath = (pathname || "/").toLowerCase();
