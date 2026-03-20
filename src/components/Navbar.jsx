@@ -11,12 +11,14 @@ export default function NavBar() {
     { path: "/aboutus", label: "About Us", itemClassName: "list-item-in-navigation-bar" },
   ];
   const accountItems = [
-    { path: "/login", label: "Log In", className: "log-in", id: "nav-login-btn" },
-    { path: "/signup", label: "Sign Up", className: "sign-up", id: "nav-signup-btn" },
+    { path: "/login", label: "Log In", className: "log-in" },
+    { path: "/signup", label: "Sign Up", className: "sign-up" },
   ];
   const { pathname } = useLocation();
   const currentPath = (pathname || "/").toLowerCase();
   const isCurrentPage = (path) => currentPath === path.toLowerCase();
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
   useEffect(() => {
     const handleResize = () => {
@@ -54,11 +56,7 @@ export default function NavBar() {
     };
   }, [isMobileMenuOpen]);
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
-  const renderNavLinks = () => (
+  const navLinks = (
     <ul className="nav-centre">
       {navItems.map(({ path, label, itemClassName }) => (
         <li key={path} className={itemClassName}>
@@ -74,13 +72,12 @@ export default function NavBar() {
     </ul>
   );
 
-  const renderAccountLinks = (idPrefix) => (
+  const accountLinks = () => (
     <div className="sign-up-sign-in-wrapper">
-      {accountItems.map(({ path, label, className, id }) => (
+      {accountItems.map(({ path, label, className, }) => (
         <Link
           key={path}
           className={className}
-          id={`${idPrefix}-${id}`}
           to={path}
           onClick={closeMobileMenu}
         >
@@ -95,41 +92,36 @@ export default function NavBar() {
       <button
         type="button"
         className={`mobile-nav-toggle${isMobileMenuOpen ? " is-open" : ""}`}
-        aria-expanded={isMobileMenuOpen}
-        aria-controls="mobile-navigation-bar"
-        aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-        onClick={() => setIsMobileMenuOpen((previousState) => !previousState)}
+        onClick={toggleMobileMenu}
       >
         {isMobileMenuOpen ? "✕" : "☰"}
       </button>
       <button
         type="button"
         className={`mobile-nav-backdrop${isMobileMenuOpen ? " is-open" : ""}`}
-        aria-label="Close navigation menu"
-        onClick={() => setIsMobileMenuOpen(false)}
+        onClick={closeMobileMenu}
       />
 
       <nav className="navigation-bar desktop-navigation-bar">
         <Link className="home-page" to="/" onClick={closeMobileMenu}>
           Greatfortheplanet
         </Link>
-        {renderNavLinks()}
-        {renderAccountLinks("desktop")}
+        {navLinks}
+        {accountLinks("desktop")}
       </nav>
 
       <nav
         id="mobile-navigation-bar"
         className={`navigation-bar mobile-navigation-bar${isMobileMenuOpen ? " is-open" : ""}`}
-        aria-hidden={!isMobileMenuOpen}
       >
         <div className="mobile-nav-header">
           <Link className="home-page" to="/" onClick={closeMobileMenu}>
             Greatfortheplanet
           </Link>
-          {renderNavLinks()}
+          {navLinks}
         </div>
         <div className="mobile-nav-footer">
-          {renderAccountLinks("mobile")}
+          {accountLinks("mobile")}
         </div>
       </nav>
     </>
