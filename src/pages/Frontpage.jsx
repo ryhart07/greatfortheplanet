@@ -1,9 +1,12 @@
-export default function HomePage() {  
+import { Link } from "react-router-dom";
+import { usePageTitle } from "../hooks/pageTitle";
+
+export default function HomePage() {
+  usePageTitle("Home");
+    
   return (
     <>
       <header>
-        <link rel="icon" type="images/x-icon" href="images/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg"></link>
-        <title>Greatfortheplanet | Home</title>
         <div className="header-background-id">
           <div className="text-on-image">
             <h1 className="page-title">
@@ -53,9 +56,9 @@ export default function HomePage() {
               industries, or encourage new sustainable energy projects in an effort to balance out the damage the human race 
               is doing to the planet. 
             </p>
-            <a href="/greatfortheplanet/purchase" className="events-button">
+            <Link to="/purchase" className="events-button">
               Tourism Events
-            </a>
+            </Link>
           </div>
         </section>
         <section>
@@ -76,9 +79,9 @@ export default function HomePage() {
                   into the atmosphere. Nowadays, more particles of carbon remain in the air than ever, trapping heat in 
                   our atmosphere.
                 </p>
-                <a className="projects-button" href="/greatfortheplanet/projects">
+                <Link to="/projects" className="projects-button">
                   Explore Projects
-                </a>
+                </Link>
               </div>
               <div className="card-right">
                 <div className="table-div">
