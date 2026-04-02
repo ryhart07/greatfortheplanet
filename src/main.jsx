@@ -8,7 +8,7 @@ import './css/largeScreen.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/greatfortheplanet">
       <App />
     </BrowserRouter>
   </StrictMode>,

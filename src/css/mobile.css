@@ -14,7 +14,7 @@
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
 	html,
 	body {
 		overflow-x: hidden;
@@ -336,6 +336,63 @@
 		right: auto;
 		max-width: 100%;
 		margin: 0 0 10px;
+	}
+
+	.login-section {
+		margin-top: 50px;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 14px;
+	}
+
+	.log-in-title {
+		font-size: clamp(32px, 8vw, 48px);
+	}
+
+	.card-paragraph {
+		font-size: 14px;
+	}
+
+	.input-field {
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 16px;
+	}
+
+	.login-button {
+		font-size: 16px;
+		padding: 12px 0;
+	}
+
+	.api-login-options-wrapper {
+		gap: 12px;
+		justify-content: center;
+	}
+
+	.api-login-option {
+		width: 100px;
+		height: 100px;
+		border-radius: 24px;
+	}
+
+	.api-login-text {
+		font-size: 14px;
+	}
+
+	.info-card-title {
+		font-size: 18px;
+	}
+
+	.info-item p {
+		font-size: 13px;
+	}
+
+	.sign-up-seperator {
+		margin-top: 14px;
+	}
+
+	.remember-me-label {
+		font-size: 14px;
 	}
 }
 

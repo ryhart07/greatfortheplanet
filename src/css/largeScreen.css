@@ -281,6 +281,131 @@
 		padding: 40px;
 		font-size: 19px;
 	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.login-section {
+		gap: 32px;
+		max-width: 1230px;
+		margin: 0 auto;
+		justify-content: center;
+		align-items: stretch;
+	}
+
+	.login-section .card {
+		padding: 52px;
+		min-height: 680px;
+	}
+
+	.login-section .card:first-child {
+		flex: 1;
+		min-width: 0;
+	}
+
+	.login-section .card:last-child {
+		flex: 0 0 450px;
+	}
+
+	.log-in-title {
+		font-size: 78px;
+	}
+
+	.card-paragraph {
+		font-size: 28px;
+	}
+
+	.input-label {
+		font-size: 28px;
+		margin-top: 28px;
+	}
+
+	.input-field {
+		font-size: 28px;
+		padding: 24px 28px;
+	}
+
+	.login-button {
+		font-size: 28px;
+		padding: 24px 0;
+	}
+
+	.api-login-option {
+		width: 210px;
+		height: 210px;
+		border-radius: 48px;
+	}
+
+	.api-login-text {
+		font-size: 26px;
+	}
+
+	.info-card-title {
+		font-size: 38px;
+	}
+
+	.info-item p {
+		font-size: 25px;
+	}
+
+	.or-log-in-with-text {
+		font-size: 25px;
+	}
+
+	.remember-me-label {
+		font-size: 26px;
+	}
+
+	.remember-me-checkbox {
+		width: 22px;
+		height: 22px;
+	}
+
+	.remember-me-wrapper {
+		gap: 8px;
+	}
+
+	.api-login-options-wrapper {
+		gap: 28px;
+		margin-top: 24px;
+	}
+
+	.api-login-options-wrapper img {
+		width: 52px;
+		height: 52px;
+	}
+
+	.inside-sign-up-card {
+		gap: 28px;
+	}
+
+	.bottom-of-sign-up-card {
+		gap: 28px;
+	}
+
+	.info-icon {
+		font-size: 36px;
+	}
+
+	.info-item {
+		gap: 16px;
+		padding: 12px 0;
+	}
+
+	.info-card-content {
+		gap: 18px;
+	}
+
+	.sign-up-seperator {
+		margin-top: 32px;
+	}
+
+	.login-button-wrapper {
+		margin-top: 40px;
+	}
 }
 
 @media (min-width: 1800px) {
@@ -395,5 +520,106 @@
 
 	.center-card {
 		width: min(360px, 78%);
+	}
+
+	.login-section {
+		max-width: 1530px;
+		gap: 42px;
+	}
+
+	.login-section .card {
+		padding: 64px;
+		min-height: 760px;
+	}
+
+	.login-section .card:last-child {
+		flex: 0 0 530px;
+	}
+
+	.log-in-title {
+		font-size: 96px;
+	}
+
+	.card-paragraph {
+		font-size: 32px;
+	}
+
+	.input-label {
+		font-size: 32px;
+	}
+
+	.input-field {
+		font-size: 32px;
+		padding: 28px 32px;
+	}
+
+	.login-button {
+		font-size: 33px;
+		padding: 28px 0;
+	}
+
+	.api-login-option {
+		width: 250px;
+		height: 250px;
+	}
+
+	.api-login-text {
+		font-size: 30px;
+	}
+
+	.info-card-title {
+		font-size: 44px;
+	}
+
+	.info-item p {
+		font-size: 28px;
+	}
+
+	.or-log-in-with-text {
+		font-size: 27px;
+	}
+
+	.remember-me-label {
+		font-size: 30px;
+	}
+
+	.remember-me-checkbox {
+		width: 26px;
+		height: 26px;
+	}
+
+	.remember-me-wrapper {
+		gap: 10px;
+	}
+
+	.api-login-options-wrapper {
+		gap: 36px;
+		margin-top: 30px;
+	}
+
+	.api-login-options-wrapper img {
+		width: 64px;
+		height: 64px;
+	}
+
+	.inside-sign-up-card {
+		gap: 34px;
+	}
+
+	.bottom-of-sign-up-card {
+		gap: 34px;
+	}
+
+	.info-icon {
+		font-size: 44px;
+	}
+
+	.info-item {
+		gap: 20px;
+		padding: 14px 0;
+	}
+
+	.info-card-content {
+		gap: 22px;
 	}
 }
