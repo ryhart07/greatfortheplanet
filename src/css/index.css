@@ -1514,6 +1514,22 @@ section {
   box-shadow: 0 4px 8px rgba(0,0,0,0.3);
 }
 
+.input-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+  margin-top: 12px;
+  list-style: none;
+}
+
+.checklist-item-valid {
+  color: rgb(48, 185, 83);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 .forgot-password-link {
   font-size: 14px;
   color: rgba(255,255,255,0.92);

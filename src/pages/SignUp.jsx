@@ -8,16 +8,8 @@ import appleIcon from "/images/apple_logo.svg";
 export default function SignUpPage() {
   usePageTitle("Sign Up");
   const [passwordValue, setPasswordValue] = useState("");
+  const specialCharacters = "!@#$%^&*()_+{}|:\"<>?[];',./`~$£€=-\\";
   
-  function handleSignUp() {
-    const submitButton = "login-button";
-    
-    // Placeholder for sign up logic
-    console.log("Signing Up!");
-    
-    return submitButton;
-  }
-
   function getGoogleSignUpClass() {
     return "google-login-option";
   }
@@ -39,11 +31,13 @@ export default function SignUpPage() {
     const isSignUpButtonEnabled = true;
 
     if (isSignUpButtonEnabled && 
-      (passwordValue.length < minLength || 
-      passwordValue.length > maxLength)) {
-        console.log(`Password must be between ${minLength} and ${maxLength} characters.`);
+      passwordValue.length < minLength) {
+        console.log(`Password must be at least ${minLength} characters.`);
+    } else if (isSignUpButtonEnabled && 
+      passwordValue.includes(" ")) {
+        console.log("Password must not contain spaces.");
     } else {
-      console.log("Password is valid.");
+        console.log("Password is valid.");
     }
 
     return { password, minLength, maxLength };
@@ -54,6 +48,15 @@ export default function SignUpPage() {
   const maxLength = 20;
   const googleSignUpButton = getGoogleSignUpClass();
   const appleSignUpButton = getAppleSignUpClass();
+
+  function handleSignUp() {
+    const submitButton = "login-button";
+    
+    // Placeholder for sign up logic
+    console.log("Signing Up!");
+    
+    return submitButton;
+  }
 
   return (
     <div className="container">
@@ -105,13 +108,24 @@ export default function SignUpPage() {
               <input
                 className={password}
                 type="password"
-                id="password"
                 name="password"
                 minLength={minLength}
                 maxLength={maxLength}
                 onChange={passwordValidation}
                 required
               />
+              <ul className="input-checklist">
+                <li className={passwordValue.length >= minLength ? "checklist-item-valid" : "checklist-item"}>
+                  At least {minLength} characters
+                </li>
+                <li className={passwordValue.includes(" ") ? "checklist-item" : "checklist-item-valid"}>
+                  No spaces allowed
+                </li>
+                <li className={specialCharacters.split("").some(char => 
+                  passwordValue.includes(char)) ? "checklist-item-valid" : "checklist-item"}>
+                  At least one special character
+                </li>
+              </ul>
             </div>
             <div className="login-button-wrapper">
               <div className="remember-me-wrapper">
