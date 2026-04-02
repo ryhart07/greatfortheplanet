@@ -98,7 +98,7 @@ export default function SignUpPage() {
               <input
                 className="input-field"
                 type="email"
-                id="email"
+                placeholder="Enter Email"
                 name="email"
                 required
               />
@@ -108,6 +108,7 @@ export default function SignUpPage() {
               <input
                 className={password}
                 type="password"
+                placeholder="Enter Password"
                 name="password"
                 minLength={minLength}
                 maxLength={maxLength}
