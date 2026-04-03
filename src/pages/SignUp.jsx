@@ -28,14 +28,13 @@ export default function SignUpPage() {
     
   function passwordValidation(e) {
     setPasswordValue(e.target.value);
-    const isSignUpButtonEnabled = true;
 
-    if (isSignUpButtonEnabled && 
-      passwordValue.length < minLength) {
+    if (passwordValue.length < minLength) {
         console.log(`Password must be at least ${minLength} characters.`);
-    } else if (isSignUpButtonEnabled && 
-      passwordValue.includes(" ")) {
+    } else if (passwordValue.includes(" ")) {
         console.log("Password must not contain spaces.");
+    } else if (!/[A-Z]/.test(passwordValue)) {
+        console.log("Password must contain at least one uppercase letter.");
     } else {
         console.log("Password is valid.");
     }
@@ -125,6 +124,9 @@ export default function SignUpPage() {
                 <li className={specialCharacters.split("").some(char => 
                   passwordValue.includes(char)) ? "checklist-item-valid" : "checklist-item"}>
                   At least one special character
+                </li>
+                <li className={/[A-Z]/.test(passwordValue) ? "checklist-item-valid" : "checklist-item"}>
+                  At least one uppercase letter
                 </li>
               </ul>
             </div>

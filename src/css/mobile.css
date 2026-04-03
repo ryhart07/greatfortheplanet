@@ -4,7 +4,7 @@
 	display: none;
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1100px) {
 	.over-people-limit {
 		position: static;
 		top: auto;
@@ -14,7 +14,7 @@
 	}
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 	html,
 	body {
 		overflow-x: hidden;
@@ -324,6 +324,30 @@
 		white-space: normal;
 		overflow-wrap: anywhere;
 		word-break: break-word;
+	}
+
+	.table-caption {
+		padding-left: 8px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.caption-toggle {
+		font-size: 12px;
+	}
+
+	.caption-arrow {
+		width: 16px;
+		height: 16px;
+	}
+
+	.caption-text {
+		font-size: 11px;
+		max-width: 100%;
+	}
+
+	.caption-visible {
+		max-height: 400px;
 	}
 
 	.partner-logos {

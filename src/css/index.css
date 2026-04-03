@@ -73,7 +73,7 @@ section {
 }
 
 .card:hover {
-  box-shadow: 0 10px 10px rgba(0,0,0,0.45);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.35);
 }
 
 .card-seperator-line {
@@ -107,7 +107,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Header Section */
+/* ========================================================================================*/
 
 
 
@@ -172,7 +174,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Navigation Bar */
+/* ========================================================================================*/
 
 
 
@@ -331,7 +335,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Main Section */
+/* ========================================================================================*/
 
 
 
@@ -421,6 +427,11 @@ section {
   font-weight: 800;
   background: rgba(47, 191, 74, 0.2);
   border: 1px solid rgba(47, 191, 74, 0.4);
+  pointer-events: none;
+}
+
+.api-table-row span {
+  pointer-events: none;
 }
 
 .api-table-header,
@@ -453,10 +464,129 @@ section {
   font-size: 32px;
 }
 
+.level-very-low {
+  background-color: rgba(47, 191, 74, 0.14);
+  border-color: rgba(47, 191, 74, 0.28);
+}
+
+.level-very-low:hover {
+  background-color: rgba(47, 191, 74, 0.28);
+  border-color: rgba(47, 191, 74, 0.5);
+}
+
+.level-low {
+  background-color: rgba(24, 104, 38, 0.14);
+  border-color: rgba(24, 104, 38, 0.28);
+}
+
+.level-low:hover {
+  background-color: rgba(24, 104, 38, 0.28);
+  border-color: rgba(24, 104, 38, 0.5);
+}
+
+.level-moderate {
+  background-color: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.6);
+}
+
+.level-moderate:hover {
+  background-color: rgba(245, 158, 11, 0.3);
+  border-color: rgba(245, 158, 11, 0.9);
+}
+
+.level-high {
+  background-color: rgba(220, 38, 38, 0.15);
+  border-color: rgba(220, 38, 38, 0.6);
+}
+
+.level-high:hover {
+  background-color: rgba(220, 38, 38, 0.3);
+  border-color: rgba(220, 38, 38, 0.9);
+}
+
+.level-very-high {
+  background-color: rgba(255, 0, 0, 0.15);
+  border-color: rgba(255, 0, 0, 0.6);
+}
+
+.level-very-high:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+  border-color: rgba(255, 0, 0, 0.9);
+}
+
 .paragraph-in-table-card {
   color: rgba(243, 244, 246, 0.78);
   margin-bottom: 12px;
   line-height: 24.8px;
+}
+
+.table-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content;
+  padding-left: 8px;
+}
+
+.caption-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.caption-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.caption-arrow {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.caption-arrow-open {
+  transform: rotate(180deg);
+}
+
+.caption-toggle {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.caption-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+}
+
+.table-unit {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 12px;
+}
+
+.caption-visible {
+  max-height: 300px;
+  opacity: 1;
+}
+
+.caption-text {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.caption-text a {
+  color: rgb(132, 170, 228);
+  text-decoration: none;
+}
+
+.caption-text a:hover {
+  text-decoration: underline;
 }
 
 .projects-button {
@@ -489,7 +619,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Individuals Section */
+/* ========================================================================================*/
 
 
 
@@ -573,7 +705,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Business Section */
+/* ========================================================================================*/
 
 
 
@@ -587,7 +721,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* About Us Section */
+/* ========================================================================================*/
 
 
 
@@ -721,7 +857,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Purchase Page Section */
+/* ========================================================================================*/
 
 
 
@@ -1106,7 +1244,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Projects Section */
+/* ========================================================================================*/
 
 
 
@@ -1291,7 +1431,9 @@ section {
 
 
 
+/* ========================================================================================*/
 /* Sign Up & Log In Section */
+/* ========================================================================================*/
 
 
 
@@ -1616,11 +1758,17 @@ section {
   padding: 0 5px 0 5px;
 }
 
+.sign-up-link:hover {
+  text-decoration: underline;
+}
 
 
 
 
+
+/* ========================================================================================*/
 /* Footer Section */
+/* ========================================================================================*/
 
 
 

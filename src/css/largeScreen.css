@@ -127,6 +127,25 @@
 		min-width: 0;
 	}
 
+	.table-caption {
+		padding-left: 16px;
+	}
+
+	.caption-toggle {
+		font-size: 16px;
+	}
+
+	.caption-arrow {
+		width: 32px;
+		height: 32px;
+	}
+
+	.caption-text {
+		font-size: 18px;
+		max-width: 650px;
+		line-height: 1.7;
+	}
+
 	.feature-card {
 		padding: 18px;
 		gap: 16px;
@@ -464,6 +483,25 @@
 	.api-table-cells {
 		font-size: 22px;
 		padding: 20px 28px;
+	}
+
+	.table-caption {
+		padding-left: 18px;
+	}
+
+	.caption-toggle {
+		font-size: 18px;
+	}
+
+	.caption-arrow {
+		width: 38px;
+		height: 38px;
+	}
+
+	.caption-text {
+		font-size: 21px;
+		max-width: 800px;
+		line-height: 1.7;
 	}
 
 	.bottom-of-card {
