@@ -135,6 +135,10 @@
 		font-size: 16px;
 	}
 
+	.table-refresh span {
+		font-size: 16px;
+	}
+
 	.caption-arrow {
 		width: 32px;
 		height: 32px;
@@ -490,6 +494,10 @@
 	}
 
 	.caption-toggle {
+		font-size: 18px;
+	}
+
+	.table-refresh span {
 		font-size: 18px;
 	}
 

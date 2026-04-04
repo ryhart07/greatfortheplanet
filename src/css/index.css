@@ -465,7 +465,7 @@ section {
 }
 
 .level-very-low {
-  background-color: rgba(47, 191, 74, 0.14);
+  background-color: rgba(34, 197, 94, 0.18);
   border-color: rgba(47, 191, 74, 0.28);
 }
 
@@ -475,7 +475,7 @@ section {
 }
 
 .level-low {
-  background-color: rgba(24, 104, 38, 0.14);
+  background-color: rgba(24, 104, 38, 0.18);
   border-color: rgba(24, 104, 38, 0.28);
 }
 
@@ -505,13 +505,13 @@ section {
 }
 
 .level-very-high {
-  background-color: rgba(255, 0, 0, 0.15);
-  border-color: rgba(255, 0, 0, 0.6);
+  background-color: rgba(185, 28, 28, 0.25);
+  border-color: rgba(185, 28, 28, 0.6);
 }
 
 .level-very-high:hover {
-  background-color: rgba(255, 0, 0, 0.3);
-  border-color: rgba(255, 0, 0, 0.9);
+  background-color: rgba(185, 28, 28, 0.3);
+  border-color: rgba(185, 28, 28, 0.9);
 }
 
 .paragraph-in-table-card {
@@ -524,14 +524,40 @@ section {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: fit-content;
+  width: 100%;
   padding-left: 8px;
+  box-sizing: border-box;
 }
 
 .caption-kicker {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.caption-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.table-refresh {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.table-refresh span {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.caption-kicker {
+  display: flex;
+  align-items: center;
 }
 
 .caption-kicker {

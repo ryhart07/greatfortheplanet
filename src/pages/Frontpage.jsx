@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { PUBLIC_URL } from "../services/api";
 import { getRegionalIntensity } from "../services/api";
 import dropdownArrow from "/images/arrow_drop_down.svg";
+import refreshIcon from "/images/refresh.svg";
 
 export default function HomePage() {
   usePageTitle("Home");
@@ -20,6 +21,14 @@ export default function HomePage() {
       .catch(() => setRegions([]))
       .finally(() => setLoading(false));
   }, []);
+
+  function refreshData() {
+    setLoading(true);
+    getRegionalIntensity()
+      .then((data) => setRegions(data.filter(region => regionsCities.includes(region.shortname))))
+      .catch(() => setRegions([]))
+      .finally(() => setLoading(false));
+  }
 
   function levelColour(index) {
     switch (index) {
@@ -38,6 +47,7 @@ export default function HomePage() {
         return "";
     }
   }
+
   return (
     <>
       <header>
@@ -154,22 +164,30 @@ export default function HomePage() {
                     </tbody>
                   </table>
                   <div className="table-caption">
-                    <div className="caption-kicker" onClick={() => setShow(!show)}>
-                      <span 
-                        className="caption-toggle"
+                    <div className="caption-header">
+                      <div className="caption-kicker" onClick={() => setShow(!show)}>
+                        <span 
+                          className="caption-toggle"
+                        >
+                          What does this data mean?
+                        </span>
+                        <img 
+                          src={dropdownArrow} 
+                          alt="toggle" 
+                          className={`caption-arrow ${show ? "caption-arrow-open" : ""}`} 
+                        />
+                      </div>
+                      <div 
+                        className="table-refresh"
+                        onClick={refreshData}
                       >
-                        What does this data mean?
-                      </span>
-                      <img 
-                        src={dropdownArrow} 
-                        alt="toggle" 
-                        className={`caption-arrow ${show ? "caption-arrow-open" : ""}`} 
-                      />
+                        <span className="refresh-text">Refresh Data</span>
+                        <img src={refreshIcon} alt="refresh" className="refresh-icon" />
+                      </div>
                     </div>
                     <div className={`caption-content ${show ? "caption-visible" : ""}`}>
                       <p className="caption-text">
-                        Data from <a href={PUBLIC_URL} target="_blank" rel="noopener noreferrer">{PUBLIC_URL}</a> API 
-                        updated every 30 minutes.
+                        Data from <a href={PUBLIC_URL} target="_blank" rel="noopener noreferrer">{PUBLIC_URL}</a>
                       </p>
                       <p className="caption-text">
                         Carbon intensity is measured in grams of CO2 emitted per kilowatt-hour (gCO2/kWh) of electricity consumed. 
