@@ -596,7 +596,7 @@ section {
 }
 
 .caption-visible {
-  max-height: 300px;
+  max-height: 600px;
   opacity: 1;
 }
 
@@ -613,6 +613,38 @@ section {
 
 .caption-text a:hover {
   text-decoration: underline;
+}
+
+.caption-list {
+  color: rgba(243, 244, 246, 0.78);
+  font-size: 13px;
+  line-height: 20px;
+  padding-left: 20px;
+}
+
+.caption-list .very-low {
+  color: rgba(0, 240, 36, 0.92);
+  font-weight: 550;
+}
+
+.caption-list .low {
+  color: rgba(9, 191, 42, 0.92);
+  font-weight: 550;
+}
+
+.caption-list .moderate {
+  color: rgba(245, 158, 11, 0.92);
+  font-weight: 550;
+}
+
+.caption-list .high {
+  color: rgba(220, 38, 38, 0.92);
+  font-weight: 550;
+}
+
+.caption-list .very-high {
+  color: rgba(185, 28, 28, 0.92);
+  font-weight: 550;
 }
 
 .projects-button {
@@ -1820,6 +1852,7 @@ section {
   background-color: rgb(26, 32, 44);
   border: none;
   font-size: 15.5px;
+
 }
 
 .privacy-policy:hover,
@@ -1842,4 +1875,14 @@ section {
   box-sizing: border-box;
   background-clip: border-box;
   position: relative;
+}
+
+.footer-expand {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.footer-expand--open {
+  max-height: 300px;
 }

@@ -350,8 +350,14 @@
 		max-width: 100%;
 	}
 
+	.caption-list {
+		font-size: 11px;
+		line-height: 1.6;
+		padding-left: 16px;
+	}
+
 	.caption-visible {
-		max-height: 400px;
+		max-height: 800px;
 	}
 
 	.partner-logos {

@@ -195,6 +195,16 @@ export default function HomePage() {
                         you can make informed decisions about when to use electricity and when to reduce your consumption to minimize 
                         your carbon footprint.
                       </p>
+                      <p className="caption-text">
+                        The levels are categorized as follows:
+                      </p>
+                      <ul className="caption-list">
+                        <li><span className="very-low"><strong>Very Low:</strong> 0-50 gCO2/kWh</span> - Excellent for using electricity.</li>
+                        <li><span className="low"><strong>Low:</strong> 51-100 gCO2/kWh</span> - Still good, but consider reducing usage if possible.</li>
+                        <li><span className="moderate"><strong>Moderate:</strong> 101-200 gCO2/kWh</span> - Try to minimize electricity use during this time.</li>
+                        <li><span className="high"><strong>High:</strong> 201-300 gCO2/kWh</span> - Avoid using electricity if you can.</li>
+                        <li><span className="very-high"><strong>Very High:</strong> 301+ gCO2/kWh</span> - Critical time to reduce electricity consumption.</li>
+                      </ul>
                     </div>
                   </div>
                 </div>
