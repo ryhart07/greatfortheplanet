@@ -896,6 +896,17 @@ section {
   font-size: small;
 }
 
+.contact-details-in-card a {
+  text-decoration: none;
+  color: rgba(175, 207, 255, 0.78);
+  line-height: 21.5px;
+  font-size: small;
+}
+
+.contact-details-in-card a:hover {
+  text-decoration: underline;
+}
+
 .partner-section {
   display: grid;
   align-items: stretch;

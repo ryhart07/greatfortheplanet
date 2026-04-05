@@ -17,6 +17,25 @@ export default function AboutUsPage() {
     console.log("Thank you for your feedback! We will get back to you as soon as possible.");
   }
 
+  function randomPhoneNumber() {
+    let areaCode = Math.floor(Math.random() * 10000);
+    while (areaCode < 7000 || areaCode > 8000) {
+      areaCode = Math.floor(Math.random() * 10000);
+    }
+
+    let centralOfficeCode = Math.floor(Math.random() * 1000);
+    while (centralOfficeCode < 100) {
+      centralOfficeCode = Math.floor(Math.random() * 1000);
+    }
+
+    let endOfficeCode = Math.floor(Math.random() * 1000);
+    while (endOfficeCode < 100) {
+      endOfficeCode = Math.floor(Math.random() * 1000);
+    }
+    
+    return `+44 ${areaCode} ${centralOfficeCode} ${endOfficeCode}`;
+  }
+
   return (
     <div className="container">
       <section className="introduction-section">
@@ -98,13 +117,16 @@ export default function AboutUsPage() {
               Get in touch with us for more information or to get involved.
             </p>
             <p className="contact-details-in-card">
-              <strong>Email:</strong> support@greatfortheplanet.com
+              <strong>Email: </strong> 
+              <a href="mailto:ryan.hartley.2007@outlook.com">
+                ryan.hartley.2007@outlook.com
+              </a>
             </p>
             <p className="contact-details-in-card">
-              <strong>Phone:</strong> +44 7985 215602
+              <strong>Phone:</strong> {randomPhoneNumber()}
             </p>
             <p className="contact-details-in-card">
-              <strong>Address:</strong> 1 Hardman St, Manchester M3 3EB, UK
+              <strong>Address:</strong> Manchester, England
             </p>
           </div>
         </div>
