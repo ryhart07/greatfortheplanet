@@ -1722,7 +1722,7 @@ section {
 }
 
 .input-field:focus {
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .input-checklist {
@@ -1743,15 +1743,33 @@ section {
 
 .forgot-password-link {
   font-size: 14px;
-  color: rgba(255,255,255,0.92);
+  color: rgba(47, 191, 74, 0.8);
   text-decoration: none;
   display: inline-flex;
   justify-content: flex-start;
   align-items: center;
+  background: none;
+  border: none;
+  text-decoration: underline;
 }
 
 .forgot-password-link:hover {
   text-decoration: underline;
+  cursor: pointer;
+}
+
+.forgot-password-link:active {
+  color: rgba(47, 191, 74, 0.95);
+}
+
+.incorrect-password-message {
+  color: rgb(220, 38, 38);
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+.hidden {
+  display: none;
 }
 
 .login-button {

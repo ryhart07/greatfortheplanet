@@ -131,15 +131,6 @@ export default function SignUpPage() {
               </ul>
             </div>
             <div className="login-button-wrapper">
-              <div className="remember-me-wrapper">
-                <input
-                  className="remember-me-checkbox"
-                  type="checkbox"
-                />
-                <label className="remember-me-label" htmlFor="remember-me">
-                  Remember me
-                </label>
-              </div>
               <button 
                 className="login-button" 
                 type="submit"
