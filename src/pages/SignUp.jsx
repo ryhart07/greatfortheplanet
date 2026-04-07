@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { usePageTitle } from "../hooks/pageTitle";
 import { Link } from "react-router-dom";
+import { createUser } from "../services/api";
 import homePageIcon from "/images/home_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.svg";
 import googleIcon from "/images/google-icon.png";
 import appleIcon from "/images/apple_logo.svg";
@@ -8,6 +9,7 @@ import appleIcon from "/images/apple_logo.svg";
 export default function SignUpPage() {
   usePageTitle("Sign Up");
   const [passwordValue, setPasswordValue] = useState("");
+  const [email, setEmail] = useState("");
   const specialCharacters = "!@#$%^&*()_+{}|:\"<>?[];',./`~$£€=-\\";
   
   function getGoogleSignUpClass() {
@@ -48,13 +50,17 @@ export default function SignUpPage() {
   const googleSignUpButton = getGoogleSignUpClass();
   const appleSignUpButton = getAppleSignUpClass();
 
-  function handleSignUp() {
-    const submitButton = "login-button";
-    
+  function handleSignUp(e) {
+    e.preventDefault();
+
     // Placeholder for sign up logic
-    console.log("Signing Up!");
-    
-    return submitButton;
+    createUser({
+      email,
+      password: passwordValue
+    })
+    .then(res => res.json())
+    .then(data => console.log(`User created with ID: ${data.id}`))
+    .catch(err => console.error(`Error creating user: ${err}`));
   }
 
   return (
@@ -99,6 +105,8 @@ export default function SignUpPage() {
                 type="email"
                 placeholder="Enter Email"
                 name="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
               <label className="input-label" htmlFor="password">

@@ -111,7 +111,10 @@ export default function LogInPage() {
               </button>
             </div>
             <div className="incorrect-password">
-              <p className={passwordValue !== "testing123" && submitButton === true ? "incorrect-password-message" : "hidden"}>
+              <p className={passwordValue !== "testing123" && 
+                submitButton === true ? 
+                "incorrect-password-message" : 
+                "hidden"}>
                 Incorrect email or password. Please try again.
               </p>
             </div>

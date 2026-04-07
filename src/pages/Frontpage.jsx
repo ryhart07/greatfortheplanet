@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { usePageTitle } from "../hooks/pageTitle";
 import { useState, useEffect } from "react";
-import { PUBLIC_URL } from "../services/api";
-import { getRegionalIntensity } from "../services/api";
+import { PUBLIC_URL } from "../services/externalApi";
+import { getRegionalIntensity } from "../services/externalApi";
 import dropdownArrow from "/images/arrow_drop_down.svg";
 import refreshIcon from "/images/refresh.svg";
 
