@@ -10,6 +10,7 @@ export default function SignUpPage() {
   usePageTitle("Sign Up");
   const [passwordValue, setPasswordValue] = useState("");
   const [email, setEmail] = useState("");
+  const [passwordStatus, setPasswordStatus] = useState("empty-password");
   const specialCharacters = "!@#$%^&*()_+{}|:\"<>?[];',./`~$£€=-\\";
   
   function getGoogleSignUpClass() {
@@ -29,23 +30,27 @@ export default function SignUpPage() {
   } 
     
   function passwordValidation(e) {
-    setPasswordValue(e.target.value);
+    const value = e.target.value;
+    setPasswordValue(value);
 
-    if (passwordValue.length < minLength) {
-        console.log(`Password must be at least ${minLength} characters.`);
-    } else if (passwordValue.includes(" ")) {
-        console.log("Password must not contain spaces.");
-    } else if (!/[A-Z]/.test(passwordValue)) {
-        console.log("Password must contain at least one uppercase letter.");
+    if (value.length < minLength) {
+        setPasswordStatus("invalid-password");
+    } else if (value.includes(" ")) {
+        setPasswordStatus("invalid-password");
+    } else if (!/[A-Z]/.test(value)) {
+        setPasswordStatus("invalid-password");
     } else {
-        console.log("Password is valid.");
+        setPasswordStatus("valid-password");
     }
 
-    return { password, minLength, maxLength };
+    return { minLength, maxLength, setPasswordStatus };
   }
 
-  const password = "input-field";
-  const minLength = 3;
+  function emailValidation(e) {
+    setEmail(e.target.value);
+  }
+  
+  const minLength = 8;
   const maxLength = 20;
   const googleSignUpButton = getGoogleSignUpClass();
   const appleSignUpButton = getAppleSignUpClass();
@@ -53,7 +58,6 @@ export default function SignUpPage() {
   function handleSignUp(e) {
     e.preventDefault();
 
-    // Placeholder for sign up logic
     createUser({
       email,
       password: passwordValue
@@ -106,14 +110,14 @@ export default function SignUpPage() {
                 placeholder="Enter Email"
                 name="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={emailValidation}
                 required
               />
               <label className="input-label" htmlFor="password">
                 Password
               </label>
               <input
-                className={password}
+                className="input-field"
                 type="password"
                 placeholder="Enter Password"
                 name="password"
@@ -122,7 +126,7 @@ export default function SignUpPage() {
                 onChange={passwordValidation}
                 required
               />
-              <ul className="input-checklist">
+              <ul className={`input-checklist${passwordValue.length === 0 ? " hide" : ""} ${passwordStatus}`}>
                 <li className={passwordValue.length >= minLength ? "checklist-item-valid" : "checklist-item"}>
                   At least {minLength} characters
                 </li>

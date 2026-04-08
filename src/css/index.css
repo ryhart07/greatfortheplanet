@@ -1725,6 +1725,19 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.empty-password {
+  display: none;
+  transition: 1s;
+}
+
+.invalid-password {
+  transition: 1s;
+}
+
+.valid-password {
+  transition: 1s;
+}
+
 .input-checklist {
   display: flex;
   flex-direction: column;
@@ -1732,6 +1745,18 @@ section {
   font-size: 14px;
   margin-top: 12px;
   list-style: none;
+
+  opacity: 1;
+  max-height: 200px;
+  transition: max-height 0.3s, opacity 0.3s;
+  overflow: hidden;
+}
+
+.input-checklist.hide {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
 
 .checklist-item-valid {
