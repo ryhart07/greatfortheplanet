@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3001";
+const BASE_URL = "https://greatfortheplanet.onrender.com";
 
 export const createUser = (data) => {
   return fetch(`${BASE_URL}/users`, {

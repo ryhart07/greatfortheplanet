@@ -10,6 +10,7 @@ export default function SignUpPage() {
   usePageTitle("Sign Up");
   const [passwordValue, setPasswordValue] = useState("");
   const [email, setEmail] = useState("");
+  const [emailStatus, setEmailStatus] = useState("empty-email");
   const [passwordStatus, setPasswordStatus] = useState("empty-password");
   const specialCharacters = "!@#$%^&*()_+{}|:\"<>?[];',./`~$£€=-\\";
   
@@ -18,6 +19,8 @@ export default function SignUpPage() {
   }
 
   function handleGoogleSignUp() {
+    // This is where the logic for signing up with Google would go. 
+    // For now, it just logs to the console.
     console.log("Signing up with Google!");
   }
 
@@ -26,6 +29,8 @@ export default function SignUpPage() {
   }
 
   function handleAppleSignUp() {
+    // This is where the logic for signing up with Apple would go. 
+    // For now, it just logs to the console.
     console.log("Signing up with Apple!");
   } 
     
@@ -39,15 +44,32 @@ export default function SignUpPage() {
         setPasswordStatus("invalid-password");
     } else if (!/[A-Z]/.test(value)) {
         setPasswordStatus("invalid-password");
+    } else if (!specialCharacters.split("").some(char => value.includes(char))) {
+        setPasswordStatus("invalid-password");
     } else {
         setPasswordStatus("valid-password");
     }
 
-    return { minLength, maxLength, setPasswordStatus };
+    return { setPasswordStatus };
   }
 
   function emailValidation(e) {
-    setEmail(e.target.value);
+    // Make it so that the error message only shows
+    // up after the user submits the form or clicks 
+    // out of the email input field for the first time
+    const value = e.target.value;
+    setEmail(value);
+    const acceptedEmailDomains = ["gmail.com", "yahoo.com", "outlook.com", "icloud.com"];
+
+    if (acceptedEmailDomains.some(domain => value.endsWith(`@${domain}`)) && 
+    value.includes("@") && 
+    value.includes(".")) {
+        setEmailStatus("valid-email");
+    } else {
+        setEmailStatus("invalid-email");
+    }
+
+    return { setEmailStatus };
   }
   
   const minLength = 8;
@@ -58,13 +80,18 @@ export default function SignUpPage() {
   function handleSignUp(e) {
     e.preventDefault();
 
-    createUser({
-      email,
-      password: passwordValue
-    })
-    .then(res => res.json())
-    .then(data => console.log(`User created with ID: ${data.id}`))
-    .catch(err => console.error(`Error creating user: ${err}`));
+    if (emailStatus !== "valid-email" || passwordStatus !== "valid-password") {
+      console.error("Email or password is invalid");
+      return;
+    } else {
+      createUser({
+        email,
+        password: passwordValue
+      })
+      .then(res => res.json())
+      .then(data => console.log(`User created with ID: ${data.id}`))
+      .catch(err => console.error(`Error creating user: ${err}`));
+    }
   }
 
   return (
@@ -113,6 +140,12 @@ export default function SignUpPage() {
                 onChange={emailValidation}
                 required
               />
+              <p>
+                {/* Make this look nicer */}
+                {emailStatus === "invalid-email" && (
+                  <span className="validation-error">Please enter a valid email address.</span>
+                )}
+              </p>
               <label className="input-label" htmlFor="password">
                 Password
               </label>

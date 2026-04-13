@@ -1725,6 +1725,12 @@ section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.validation-error {
+  color: rgb(220, 38, 38);
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 .empty-password {
   display: none;
   transition: 1s;
@@ -1753,6 +1759,13 @@ section {
 }
 
 .input-checklist.hide {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.input-checklist.valid-password {
   max-height: 0;
   opacity: 0;
   overflow: hidden;
