@@ -9,27 +9,31 @@ import Partner4 from "/images/partner4.png";
 export default function AboutUsPage() {
   usePageTitle("About Us");
 
-  const helpBoxClass = "how-to-help-box";
   const [message, setMessage] = useState("");
+  const [phoneNumber] = useState(randomPhoneNumber());
 
   function handleFeedbackSubmit() {
     if (!message.trim()) return;
+    
     console.log("Thank you for your feedback! We will get back to you as soon as possible.");
+    setMessage("");
   }
 
   function randomPhoneNumber() {
     let areaCode = Math.floor(Math.random() * 10000);
-    while (areaCode < 7000 || areaCode > 8000) {
+    let centralOfficeCode = Math.floor(Math.random() * 1000);
+    let endOfficeCode = Math.floor(Math.random() * 1000);
+
+    if (areaCode < 7000 || areaCode > 8000) {
       areaCode = Math.floor(Math.random() * 10000);
     }
-
-    let centralOfficeCode = Math.floor(Math.random() * 1000);
-    while (centralOfficeCode < 100) {
+    
+    if (centralOfficeCode < 100) {
       centralOfficeCode = Math.floor(Math.random() * 1000);
+
     }
 
-    let endOfficeCode = Math.floor(Math.random() * 1000);
-    while (endOfficeCode < 100) {
+    if (endOfficeCode < 100) {
       endOfficeCode = Math.floor(Math.random() * 1000);
     }
     
@@ -37,7 +41,7 @@ export default function AboutUsPage() {
   }
 
   return (
-    <div className="container">
+    <main className="container">
       <section className="introduction-section">
         <div className="card">
           <div className="top-of-card">
@@ -87,7 +91,6 @@ export default function AboutUsPage() {
             </div>
           </div>
         </div>
-
         <div className="card">
           <h2 className="title-in-second-card">
             Contact Us
@@ -102,7 +105,7 @@ export default function AboutUsPage() {
               Message:
             </p>
             <textarea
-              className={helpBoxClass}
+              className="how-to-help-box"
               placeholder="How can we help?"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -123,7 +126,7 @@ export default function AboutUsPage() {
               </a>
             </p>
             <p className="contact-details-in-card">
-              <strong>Phone:</strong> {randomPhoneNumber()}
+              <strong>Phone:</strong> {phoneNumber}
             </p>
             <p className="contact-details-in-card">
               <strong>Address:</strong> Manchester, England
@@ -131,7 +134,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-
       <section className="partner-section">
         <div className="card">
           <h2 className="title-in-card">
@@ -150,6 +152,6 @@ export default function AboutUsPage() {
           </div>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
