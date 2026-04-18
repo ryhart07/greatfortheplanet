@@ -8,16 +8,16 @@ export default function PurchasePage() {
   const [people, setPeople] = useState(1);
   const [peopleInput, setPeopleInput] = useState("1");
 
-  const MAX_PEOPLE = 10_000_000;
-  const MIN_PURCHASE_LBS = 1_000;
-  const RATE_PER_1000 = 5.99;
-  const LBS_WITH_FLYING = 3500;
-  const LBS_WITHOUT_FLYING = 1750;
+  const maxPeople = 10_000_000;
+  const minPurchaseLbs = 1_000;
+  const ratePer1000 = 5.99;
+  const lbsWithFlying = 3500;
+  const lbsWithoutFlying = 1750;
 
-  const perPerson = fly ? LBS_WITH_FLYING : LBS_WITHOUT_FLYING;
+  const perPerson = fly ? lbsWithFlying : lbsWithoutFlying;
   const totalBeforeMinimum = people * perPerson;
-  const adjustedTotal = Math.max(MIN_PURCHASE_LBS, totalBeforeMinimum);
-  const totalCost = (adjustedTotal / 1000) * RATE_PER_1000;
+  const adjustedTotal = Math.max(minPurchaseLbs, totalBeforeMinimum);
+  const totalCost = (adjustedTotal / 1000) * ratePer1000;
 
   const formatLbs = (value) => `${value.toLocaleString()} lbs`;
   const formatPounds = (value) => `£${value.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
@@ -36,7 +36,7 @@ export default function PurchasePage() {
       return;
     }
 
-    const clamped = Math.min(MAX_PEOPLE, Math.floor(parsed));
+    const clamped = Math.min(maxPeople, Math.floor(parsed));
     setPeople(clamped);
     setPeopleInput(String(clamped));
   }
@@ -60,7 +60,7 @@ export default function PurchasePage() {
       return;
     }
 
-    const clamped = Math.min(MAX_PEOPLE, Math.floor(parsed));
+    const clamped = Math.min(maxPeople, Math.floor(parsed));
     setPeople(clamped);
     setPeopleInput(String(clamped));
   }
@@ -118,16 +118,16 @@ export default function PurchasePage() {
                   </span>
                   <h3 className="calc-mini-title">Number of People</h3>
                 </div>
-                {people === MAX_PEOPLE && (
+                {people === maxPeople && (
                   <div className="over-people-limit">
-                    <span className="over-limit-text">Max {MAX_PEOPLE.toLocaleString()} people</span>
+                    <span className="over-limit-text">Max {maxPeople.toLocaleString()} people</span>
                   </div>
                 )}
                 <input
                   className="calc-input calc-input--card"
                   type="number"
                   min="1"
-                  max={MAX_PEOPLE}
+                  max={maxPeople}
                   value={peopleInput}
                   onChange={handlePeopleChange}
                   onFocus={handlePeopleFocus}

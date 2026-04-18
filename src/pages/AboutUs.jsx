@@ -30,7 +30,6 @@ export default function AboutUsPage() {
     
     if (centralOfficeCode < 100) {
       centralOfficeCode = Math.floor(Math.random() * 1000);
-
     }
 
     if (endOfficeCode < 100) {

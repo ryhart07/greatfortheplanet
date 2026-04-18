@@ -759,6 +759,18 @@ section {
   line-height: 1.4;
 }
 
+.carbon-calc-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 18px;
+  background: rgba(20, 25, 35, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.92);
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
 
 
 
